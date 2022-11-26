@@ -36,7 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   sizer:
   math_expressions:
-  sqflite: 
+  sqflite:
+  snack:
 dev_dependencies:
   flutter_test:
     sdk: flutter

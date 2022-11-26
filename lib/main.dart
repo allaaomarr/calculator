@@ -6,7 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:math_expressions/math_expressions.dart';
-
+import 'package:snack/snack.dart';
 void main() {
   runApp(Sizer(builder: (context, orientation, deviceType) {
     return MaterialApp(
@@ -52,6 +52,7 @@ class _HomeState extends State<Home> {
   late database db;
   List<Results> datas = [];
   bool fetching = true;
+  final bar = SnackBar(content: Text('Saved'),backgroundColor: Colors.green,);
   @override
   void initState() {
     super.initState();
@@ -104,7 +105,10 @@ class _HomeState extends State<Home> {
                                     ),
                                   labelText: "Enter title to Save",
                                   labelStyle: TextStyle(color: Colors.white),
-                                 suffix: TextButton(onPressed: (){db.addDB(Results(result:answer.toString(),title: controller.text));}, child: Text("Save",style: TextStyle(color: Colors.green),),),
+                                 suffix: TextButton(onPressed: (){
+                                   db.addDB(Results(result:answer.toString(),title: controller.text));
+                                   bar.show(context);
+                                   }, child: Text("Save",style: TextStyle(color: Colors.green),),),
                                   fillColor: Colors.white,
 
                                 ),),
