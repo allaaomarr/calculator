@@ -12,9 +12,11 @@ class Button extends StatelessWidget {
     return
 
      ClipRect(
+
         child: Container(
-          height: 70,
-          width: 70,
+
+          height: 72,
+          width: 72,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(60),
             color: CupertinoColors.black,
